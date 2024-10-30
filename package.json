@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.1.11",
@@ -30,5 +31,9 @@
   "dependencies": {
     "@tailus/themer": "^0.0.5",
     "swiper": "^11.0.6"
+  }
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }

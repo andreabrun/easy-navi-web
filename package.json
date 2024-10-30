@@ -31,7 +31,7 @@
   "dependencies": {
     "@tailus/themer": "^0.0.5",
     "swiper": "^11.0.6"
-  }
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

@@ -40,4 +40,5 @@ module.exports = {
             }
         })
     ],
+    base: 'easy-navi-web',
 };

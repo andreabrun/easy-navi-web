@@ -3,7 +3,7 @@ import themer from "@tailus/themer";
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-    content: ["./*.html", "./*.js", "./*.css"],
+    content: ["./easy-navi-web/*.html", "./easy-navi-web/*.js", "./easy-navi-web/*.css"],
     darkMode: "media",
     safelist: ["isToggled"],
     theme: {
@@ -40,5 +40,4 @@ module.exports = {
             }
         })
     ],
-    base: "easy-navi-web",
 };

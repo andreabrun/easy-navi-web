@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <!-- GENERIC META ATTRIBUTES -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>easy-navi</title>
+    <meta name="description" content="easy-navi è un navigatore per moto economico, sempre installato, con indicazioni semplici senza ricarica batteria. Accendilo, imposta la destinazione tramite l'app e parti. Progettato per la massima semplicità e affidabilità, senza GPS né batteria.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
+    <!-- Nel caso ci siano piu icone, per tema dark e light -->
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" media="(prefers-color-scheme: light)" /> -->
+    <!-- <link rel="icon" type="image/svg+xml" href="/darkfavicon.svg" media="(prefers-color-scheme: dark)" /> -->
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="http://www.easy-navi.it/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="easy-navi" />
+    <meta property="og:description"
+        content="Il navigatore per moto economico, sempre installato, con indicazioni semplici senza ricarica batteria." />
+    <meta property="og:image" content="/og-cover.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="easy-navi.it" />
+    <meta property="twitter:url" content="http://www.easy-navi.it/" />
+    <meta name="twitter:title" content="easy-navi" />
+    <meta name="twitter:description" content="Il navigatore per moto economico, sempre installato, con indicazioni semplici senza ricarica batteria." />
+    <meta name="twitter:image" content="public/img/icon.png" />
+
+    <!-- MAIN APP script -->
+    <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <a id="logo-link" href="#hero" aria-label="easy-navi logo">easy-navi</a>
+
+        <!-- MENU DESKTOP -->
+        <ul id="menu-desktop">
+            <!-- IT -->
+            <a data-lang="it" href="#about">Come funziona</a>
+            <a data-lang="it" href="#reviews">Recensioni</a>
+            <a data-lang="it" href="#contact">Contatti</a>
+            <!-- EN -->
+            <a data-lang="en" href="#about">How it works</a>
+            <a data-lang="en" href="#reviews">Reviews</a>
+            <a data-lang="en" href="#contact">Contact us</a>
+        </ul>
+
+        <!-- LANG TOGGLE -->
+        <button id="lang-toggle" onclick="langToggle()" class="it"></button>
+
+        <!-- MENU MOBILE TOGGLE -->
+        <button aria-label="humburger" id="menu-mobile-button" onclick="this.classList.toggle('active')">
+            <div aria-hidden="true" id="line1" class="line"></div>
+            <div aria-hidden="true" id="line2" class="line !mt-1"></div>
+        </button>
+
+        <!-- MENU MOBILE CONTENT -->
+        <ul id="menu-mobile" onclick="document.querySelector('#menu-mobile-button').classList.remove('active')">
+            <!-- IT -->
+            <a data-lang="it" href="#about">Come funziona</a>
+            <a data-lang="it" href="#reviews">Recensioni</a>
+            <a data-lang="it" href="#contact">Contatti</a>
+            <!-- EN -->
+            <a data-lang="en" href="#about">How it works</a>
+            <a data-lang="en" href="#reviews">Revirews</a>
+            <a data-lang="en" href="#contact">Contact us</a>
+        </ul>
+    </header>
+
+    <!-- MAIN SITE CONTENT -->
+    <main>
+
+        <!-- LANDING -->
+        <section id="hero">
+
+            <div class="flex flex-row md:flex-row justify-center items-center max-h-[50dvh] overflow-hidden rounded-3xl">
+
+                <!-- PAYOFF -->
+                <div class="relative lg:absolute flex flex-col flex-1 z-20 translate-x-1/2 lg:-translate-x-2/3 lg:-translate-y-2/3 min-w-[50vw] lg:min-w-[unset]">
+                    <h1 data-lang="it" class="payoff">
+                        Lasciati <span class="font-pixel text-easynavi-gradient">guidare</span>
+                        <br>
+                        non <span class="font-pixel text-easynavi-gradient">distrarre</span>
+                    </h1>
+                    <h1 data-lang="en" class="payoff">
+                        Be <span class="font-pixel text-easynavi-gradient">guided</span> with
+                        <br>
+                        no <span class="font-pixel text-easynavi-gradient">distractions</span>
+                    </h1>
+
+                    <p data-lang="it" class="text-wrap mt-6 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+                        Nessuna batteria e GPS, installalo sulla moto e vai!
+                    </p>
+                    <p data-lang="en" class="text-wrap mt-6 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+                        No batteries, no GPS, install it on the motorbike and hit the road!
+                    </p>
+
+                </div>
+
+                <img class="object-cover object-center flex-1 opacity-80 -translate-x-1/4 lg:transform-none" src="public/img/home.webp" alt="easy-navi example" srcset="" />
+            </div>
+
+            <!-- NEWS -->
+            <div id="news" class="my-10">
+                <h3 data-lang="it">Ultimi aggiornamenti</h3>
+                <h3 data-lang="en">Latest news</h3>
+
+                <!-- NEWS LIST, best not more than 4 -->
+                <div class="flex gap-2">
+                    <span class="news-entry">
+                        <span class="tag">25/03/24</span>
+                        <span class="content" data-lang="it">Aggiornamento app e firmware</span>
+                        <span class="content" data-lang="en">App and firmware upgrade</span>
+                    </span>
+                    <span class="news-entry">
+                        <span class="tag">28/06/23</span>
+                        <span class="content" data-lang="it">Nuovo design, più piccolo, sottile e leggero</span>
+                        <span class="content" data-lang="en">New design, smaller, thinner and lighter</span>
+                    </span>
+                    <span class="news-entry">
+                        <span class="tag">10/07/23</span>
+                        <span class="content" data-lang="it">Aggiornamento delle indicazioni più rapido</span>
+                        <span class="content" data-lang="en">Faster updating directions</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- CTA, call to action -->
+            <div class="p-1 max-w-xs mx-auto my-5 rounded-[calc(var(--btn-border-radius)+4px)] bg-gray-950/5 border dark:border-white/10 dark:bg-white/5">
+                <a href="#about"
+                    class="*:select-none dark:shadow-primary-500/10 *:disabled:opacity-20 disabled:*:text-gray-300 disabled:dark:*:text-gray-700 dark:*:disabled:!text-white group relative z-[1] flex h-11 items-center justify-center gap-1.5 rounded-[--btn-border-radius] border border-primary-600 bg-primary-500 px-4 text-base text-white shadow-md shadow-primary-200 before:absolute before:inset-0 before:rounded-[calc(var(--btn-border-radius)-1px)] before:border before:border-primary-500 before:bg-gradient-to-b before:from-primary-600 hover:bg-primary-600 active:bg-primary-700 disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950/40 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:bg-primary-600 dark:before:border-0 dark:before:border-t dark:before:border-primary-400 dark:before:shadow-inner dark:before:shadow-white/10 dark:hover:bg-primary-700 dark:active:bg-primary-800 dark:active:before:from-primary-700 dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none [&>*:not(.sr-only)]:relative">
+                    <span data-lang="it" class="text-nowrap">Scopri <span
+                            class="ml-1 font-pixel text-xl">easy-navi</span></span>
+                    <span data-lang="en" class="text-nowrap">Discover <span
+                            class="ml-1 font-pixel text-xl">easy-navi</span></span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="text-center">
+                <h2 data-lang="it" class="text-3xl text-gray-950 dark:text-white font-semibold">
+                    Una rivoluzione sulle due ruote
+                </h2>
+                <h2 data-lang="en" class="text-3xl text-gray-950 dark:text-white font-semibold">
+                    A revolution on two wheels
+                </h2>
+
+                <p data-lang="it" class="mt-6 text-gray-700 dark:text-gray-300">
+                    Semplice, immediato e senza proccupazioni
+                </p>
+                <p data-lang="en" class="mt-6 text-gray-700 dark:text-gray-300">
+                    Simple, straight-forward ad no hassles
+                </p>
+            </div>
+
+
+            <!-- FEATURE GRID -->
+            <div class="my-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+
+                <!-- CARD 1 -->
+                <div class="relative group flex flex-col items-center justify-center overflow-hidden p-[--card-padding] rounded-[--card-border-radius] bg-white border border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] dark:bg-[--card-dark-bg]">
+
+                    <!-- CARD GLOW -->
+                    <div aria-hidden="true"
+                        class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-lime-500 to-white dark:to-white blur-2xl opacity-30 dark:opacity-10 dark:group-hover:opacity-15">
+                    </div>
+
+                    <!-- CARD ICON -->
+                    <span class="text-5xl">🔋</span>
+
+                    <!-- CARD TEXT -->
+                    <h2 data-lang="it" class="mt-6 text-center font-semibold text-gray-950 dark:text-white text-2xl">
+                        Batteria infinita
+                    </h2>
+                    <h2 data-lang="en" class="mt-6 text-center font-semibold text-gray-950 dark:text-white text-2xl">
+                        Infinite charge
+                    </h2>
+                </div>
+                
+                <!-- CARD 2 -->
+                <div class="relative group flex flex-col items-center justify-center overflow-hidden p-[--card-padding] rounded-[--card-border-radius] bg-white border border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] dark:bg-[--card-dark-bg]">
+                    
+                    <!-- CARD GLOW -->
+                    <div aria-hidden="true"
+                        class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-yellow-500 to-white dark:to-white blur-2xl opacity-30 dark:opacity-10 dark:group-hover:opacity-15">
+                    </div>
+
+                    <!-- CARD ICON -->
+                    <span class="text-5xl">😎</span>
+
+                    <!-- CARD TEXT -->
+                    <h2 data-lang="it" class="mt-6 text-center font-semibold text-gray-950 dark:text-white text-2xl">
+                        Facile da installare
+                    </h2>
+                    <h2 data-lang="en" class="mt-6 text-center font-semibold text-gray-950 dark:text-white text-2xl">
+                        Easy to install
+                    </h2>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="relative group flex flex-col items-center justify-center overflow-hidden p-[--card-padding] rounded-[--card-border-radius] bg-white border border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] dark:bg-[--card-dark-bg]">
+
+                    <!-- CARD GLOW -->
+                    <div aria-hidden="true"
+                        class="inset-0 absolute aspect-video border rounded-full -translate-y-1/2 group-hover:-translate-y-1/4 duration-300 bg-gradient-to-b from-cyan-400 to-white dark:to-white blur-2xl opacity-30 dark:opacity-10 dark:group-hover:opacity-15">
+                    </div>
+
+                    <!-- CARD ICON -->
+                    <span class="text-5xl">🛡</span>
+
+                    <!-- CARD TEXT -->
+                    <h2 data-lang="it" class="mt-6 text-center font-semibold text-gray-950 dark:text-white text-2xl">
+                        Nessun GPS
+                    </h2>
+                    <h2 data-lang="en" class="mt-6 text-center font-semibold text-gray-950 dark:text-white text-2xl">
+                        No GPS
+                    </h2>
+                </div>
+            </div>
+
+
+            <!-- SLIDER CONTAINER -->
+            <div class="mx-auto z-20 sm:w-10/12 lg:w-4/5 relative">
+
+                <div class="flex flex-col-reverse md:flex-row justify-center items-center relative gap-12">
+                    <!-- GRID BG EFFECT -->
+                    <div class="absolute inset-0 left-1/2 -z-20 h-full w-full -translate-x-1/2 dark:opacity-5 [background-image:linear-gradient(to_bottom,transparent_98%,theme(colors.gray.200/75%)_98%),linear-gradient(to_right,transparent_94%,_theme(colors.gray.200/75%)_94%)] [background-size:16px_35px] [mask:radial-gradient(black,transparent_95%)]"></div>
+                    <div class="absolute inset-0 top-1/4 w-2/3 h-1/2 -z-[1] rounded-full bg-blue-200/50 dark:bg-white/5 mx-auto blur-3xl"></div>
+
+                    <!-- TEXT -->
+                    <div class="flex flex-col text-left z-20 w-fit">
+                        <h1 data-lang="it" class="text-center md:text-left text-4xl font-pixel text-easynavi-gradient">
+                            easy, navi <span class="text-white">❤️‍🔥</span>
+                        </h1>
+
+                        <h1 data-lang="en" class="text-center md:text-left text-4xl font-pixel text-easynavi-gradient">
+                            easy, navi <span class="text-white">❤️‍🔥</span>
+                        </h1>
+
+                        <!-- LIST HOW TO -->
+                        <ul class="text-wrap mt-6 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+                            <!-- IT -->
+                            <li data-lang="it">▪ Installa il navigatore</li>
+                            <li data-lang="it">▪ Apri l'applicazione sul telefono</li>
+                            <li data-lang="it">▪ Seleziona la destinazione</li>
+                            <li data-lang="it">▪ Partenza.. via!</li>
+                            <!-- EN -->
+                            <li data-lang="en">▪ Install the navigator</li>
+                            <li data-lang="en">▪ Open the app on your phone</li>
+                            <li data-lang="en">▪ Select destination</li>
+                            <li data-lang="en">▪ Set.. go!</li>
+                        </ul>
+
+                    </div>
+
+
+                    <!-- SCREENSHOT SLIDER -->
+                    <div id="screenshots" class="swiper max-w-80 screenSlides pb-6 shrink-0 w-min !mx-0">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="content [--hue:20]">
+                                    <img src="public/img/1.webp" alt="1" srcset="">
+                                    <span class="glow"><span></span></span>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="content [--hue:125]">
+                                    <img src="public/img/2.webp" alt="2" srcset="">
+                                    <span class="glow"><span></span></span>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="content [--hue:280]">
+                                    <img src="public/img/3.webp" alt="3" srcset="">
+                                    <span class="glow"><span></span></span>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="content [--hue:60]">
+                                    <img src="public/img/4.webp" alt="4" srcset="">
+                                    <span class="glow"><span></span></span>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="content [--hue:165]">
+                                    <img src="public/img/5.webp" alt="5" srcset="">
+                                    <span class="glow"><span></span></span>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="content [--hue:330]">
+                                    <img src="public/img/6.webp" alt="6" srcset="">
+                                    <span class="glow"><span></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination *:!rounded-none -mb-3 *:!w-6 *:!h-0.5"></div>
+                    </div>
+                </div>
+
+                <!-- CTA, call to action -->
+                <div class="p-1 max-w-xs mx-auto mt-20 rounded-[calc(var(--btn-border-radius)+4px)] bg-gray-950/5 border dark:border-white/10 dark:bg-white/5">
+                    <a href="#contact"
+                        class="*:select-none dark:shadow-primary-500/10 *:disabled:opacity-20 disabled:*:text-gray-300 disabled:dark:*:text-gray-700 dark:*:disabled:!text-white group relative z-[1] flex h-11 items-center justify-center gap-1.5 rounded-[--btn-border-radius] border border-primary-600 bg-primary-500 px-4 text-base text-white shadow-md shadow-primary-200 before:absolute before:inset-0 before:rounded-[calc(var(--btn-border-radius)-1px)] before:border before:border-primary-500 before:bg-gradient-to-b before:from-primary-600 hover:bg-primary-600 active:bg-primary-700 disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950/40 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:bg-primary-600 dark:before:border-0 dark:before:border-t dark:before:border-primary-400 dark:before:shadow-inner dark:before:shadow-white/10 dark:hover:bg-primary-700 dark:active:bg-primary-800 dark:active:before:from-primary-700 dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none [&>*:not(.sr-only)]:relative">
+                        <span class="text-nowrap">Contattaci!</span>
+                    </a>
+                </div>
+        </section>
+
+        
+        <!-- REVIEWS -->
+        <section id="reviews">
+            <div class="text-center">
+                <h2 data-lang="it" class="text-3xl text-gray-950 dark:text-white font-semibold">
+                    Recensioni
+                </h2>
+                <h2 data-lang="en" class="text-3xl text-gray-950 dark:text-white font-semibold">
+                    Reviews
+                </h2>
+
+                <p data-lang="it" class="mt-6 text-gray-700 dark:text-gray-300">
+                    Ecco cosa pensano i clienti di easy-navi
+                </p>
+                <p data-lang="en" class="mt-6 text-gray-700 dark:text-gray-300">
+                    What our clients say about easy-navi
+                </p>
+            </div>
+
+            <!-- REVIEW CONTAINER -->
+            <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                
+                <!-- REVIEW CARD -->
+                <div class="card group">
+                    <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+                        <img class="h-full w-full rounded-[--avatar-border-radius] object-cover" alt="John Doe"
+                            src="https://randomuser.me/api/portraits/men/2.jpg" loading="lazy" width="120" height="120">
+                    </span>
+                    <div class="w-[calc(100%-3.25rem)]">
+                        <h3 class="font-medium text-gray-950 dark:text-white">Oketa Fred</h3>
+                        <blockquote class="mt-3">
+                            <p class="text-gray-700 dark:text-gray-300">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio autem veritatis minus
+                                alias quisquam architecto similique voluptate obcaecati, soluta aperiam adipisci neque,
+                                rem illo vel consequatur sapiente eligendi perferendis nisi.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- REVIEW CARD -->
+                <div class="card group">
+                    <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+                        <img class="h-full w-full rounded-[--avatar-border-radius] object-cover" alt="John Doe"
+                            src="https://randomuser.me/api/portraits/men/10.jpg" loading="lazy" width="120"
+                            height="120">
+                    </span>
+                    <div class="w-[calc(100%-3.25rem)]">
+                        <h3 class="font-medium text-gray-950 dark:text-white">Khatab Wedaa</h3>
+                        <blockquote class="mt-3">
+                            <p class="text-gray-700 dark:text-gray-300">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio autem veritatis minus
+                                alias quisquam architecto similique voluptate obcaecati, soluta aperiam adipisci neque,
+                                rem illo vel consequatur sapiente eligendi perferendis nisi.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- REVIEW CARD -->
+                <div class="card group">
+                    <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+                        <img class="h-full w-full rounded-[--avatar-border-radius] object-cover" alt="John Doe"
+                            src="https://randomuser.me/api/portraits/men/11.jpg" loading="lazy" width="120"
+                            height="120">
+                    </span>
+                    <div class="w-[calc(100%-3.25rem)]">
+                        <h3 class="font-medium text-gray-950 dark:text-white">Rodrigo Aguilar</h3>
+                        <blockquote class="mt-3">
+                            <p class="text-gray-700 dark:text-gray-300">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio autem veritatis minus
+                                alias quisquam architecto similique voluptate obcaecati, soluta aperiam adipisci neque,
+                                rem illo vel consequatur sapiente eligendi perferendis nisi.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="text-center">
+                <h2 data-lang="it" class="text-3xl text-gray-950 dark:text-white font-semibold">
+                    Contattaci
+                </h2>
+                <h2 data-lang="en" class="text-3xl text-gray-950 dark:text-white font-semibold">
+                    Contact us
+                </h2>
+
+                <p data-lang="it" class="mt-6 text-gray-700 dark:text-gray-300">
+                    Hai qualche dubbio, curiosità o domanda da farci? Siamo qui per te!
+                </p>
+                <p data-lang="en" class="mt-6 text-gray-700 dark:text-gray-300">
+                    Do you have any doubts, curiosities or questions to ask us? We are here for you!
+                </p>
+            </div>
+
+
+            <!-- CONTACT FORM -->
+            <form action="#" id="contact-form"
+                class="mt-12 max-w-md size-full gap-4 flex flex-col items-stretch mx-auto">
+                <span class="entry">
+                    <label for="firstname" data-lang="it">Nome e cognome</label>
+                    <label for="firstname" data-lang="en">Full name</label>
+                    <input class="w-full focus:outline rounded-[--field-border-radius] appearance-none transition duration-300 border shadow focus:outline-2 focus:-outline-offset-1 focus:border-transparent bg-transparent outline-primary-600 shadow-gray-700/5 border-[--ui-light-border-color] hover:border-[--field-light-border-hover-color] placeholder-gray-400 dark:bg-[--field-dark-bg] dark:focus:bg-[--field-dark-focus-bg] dark:outline-primary-500 dark:shadow-gray-950/40 dark:border-[--ui-dark-border-color] dark:hover:border-[--field-dark-border-hover-color] dark:placeholder-gray-600 dark:text-white disabled:bg-gray-100 disabled:border-gray-300 disabled:text-gray-400 disabled:placeholder-gray-300 dark:disabled:bg-gray-600/10 dark:disabled:border-gray-600/20 dark:disabled:text-gray-600 dark:disabled:placeholder-gray-700 text-base px-3 min-h-9"
+                        name="firstname" placeholder="" type="text" id="firstname" required>
+                </span>
+
+                <span class="entry">
+                    <label for="email" data-lang="it">Indirizzo e-mail</label>
+                    <label for="email" data-lang="en">E-mail address</label>
+                    <input class="w-full focus:outline rounded-[--field-border-radius] appearance-none transition duration-300 border shadow focus:outline-2 focus:-outline-offset-1 focus:border-transparent bg-transparent outline-primary-600 shadow-gray-700/5 border-[--ui-light-border-color] hover:border-[--field-light-border-hover-color] placeholder-gray-400 dark:bg-[--field-dark-bg] dark:focus:bg-[--field-dark-focus-bg] dark:outline-primary-500 dark:shadow-gray-950/40 dark:border-[--ui-dark-border-color] dark:hover:border-[--field-dark-border-hover-color] dark:placeholder-gray-600 dark:text-white disabled:bg-gray-100 disabled:border-gray-300 disabled:text-gray-400 disabled:placeholder-gray-300 dark:disabled:bg-gray-600/10 dark:disabled:border-gray-600/20 dark:disabled:text-gray-600 dark:disabled:placeholder-gray-700 text-base px-3 min-h-9"
+                        name="email" placeholder="e-mail" type="email" id="email" required>
+                </span>
+
+                <span class="entry">
+                    <label for="message" data-lang="it">Messaggio</label>
+                    <label for="message" data-lang="en">Message</label>
+                    <textarea class="w-full focus:outline rounded-[--field-border-radius] appearance-none transition duration-300 border shadow focus:outline-2 focus:-outline-offset-1 focus:border-transparent bg-transparent outline-primary-600 shadow-gray-700/5 border-[--ui-light-border-color] hover:border-[--field-light-border-hover-color] placeholder-gray-400 dark:bg-[--field-dark-bg] dark:focus:bg-[--field-dark-focus-bg] dark:outline-primary-500 dark:shadow-gray-950/40 dark:border-[--ui-dark-border-color] dark:hover:border-[--field-dark-border-hover-color] dark:placeholder-gray-600 dark:text-white disabled:bg-gray-100 disabled:border-gray-300 disabled:text-gray-400 disabled:placeholder-gray-300 dark:disabled:bg-gray-600/10 dark:disabled:border-gray-600/20 dark:disabled:text-gray-600 dark:disabled:placeholder-gray-700 text-base px-3 min-h-9"
+                        name="message" id="message" rows="4" required></textarea>
+                </span>
+
+                <button type="submit">
+                    <span class="*:select-none dark:shadow-primary-500/10 *:disabled:opacity-20 disabled:*:text-gray-300 disabled:dark:*:text-gray-700 dark:*:disabled:!text-white group relative z-[1] flex h-11 items-center justify-center gap-1.5 rounded-[--btn-border-radius] border border-primary-600 bg-primary-500 px-4 text-base text-white shadow-md shadow-primary-200 before:absolute before:inset-0 before:rounded-[calc(var(--btn-border-radius)-1px)] before:border before:border-primary-500 before:bg-gradient-to-b before:from-primary-600 hover:bg-primary-600 active:bg-primary-700 disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950/40 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:bg-primary-600 dark:before:border-0 dark:before:border-t dark:before:border-primary-400 dark:before:shadow-inner dark:before:shadow-white/10 dark:hover:bg-primary-700 dark:active:bg-primary-800 dark:active:before:from-primary-700 dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none [&>*:not(.sr-only)]:relative">
+                        <span data-lang="it">Invia messaggio</span>
+                        <span data-lang="en">Send message</span>
+                    </span>
+                </button>
+            </form>
+        </section>
+
+        
+        <!-- DOWNLOADs (hidden, '/?download') -->
+        <section id="download" class="hidden fixed inset-0 top-14 size-full z-50 bg-[--card-light-bg] dark:bg-[--card-dark-bg]">
+            <div class="text-center mb-10">
+                <h2 data-lang="it" class="text-3xl text-gray-950 dark:text-white font-semibold">
+                    Download
+                </h2>
+                <h2 data-lang="en" class="text-3xl text-gray-950 dark:text-white font-semibold">
+                    Download
+                </h2>
+
+                <p data-lang="it" class="mt-6 text-gray-700 dark:text-gray-300">
+                    Qui puoi scaricare l'app per Android e il firmware di easy-navi
+                </p>
+                <p data-lang="en" class="mt-6 text-gray-700 dark:text-gray-300">
+                    Here you can find Android app installer and easy-navi's firmware
+                </p>
+            </div>
+
+
+            <div class="flex flex-wrap gap-8 justify-center">
+        
+                <!-- ANDROID APP -->
+                <ul class="flex flex-col gap-2 my-4">
+                    <h2 class="text-center">Android</h2>
+                    <li>
+                        <a href="#download" class="flex card hover:bg-[--tabs-light-bg] hover:dark:bg-[--tabs-dark-bg] !p-4 transition-colors items-center bg-transparent">
+                            <img class="rounded-lg size-12" src="img/icon_app.png" alt="android app">
+                            <span class="text-gray-600 dark:text-white">easy-navi.apk v-1.1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#download" class="flex card hover:bg-[--tabs-light-bg] hover:dark:bg-[--tabs-dark-bg] !p-4 transition-colors items-center bg-transparent">
+                            <img class="rounded-lg size-12" src="img/icon_app.png" alt="android app">
+                            <span class="text-gray-600 dark:text-white">easy-navi.apk v-1.0</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- ROM/FIRMWARE -->
+                <ul class="flex flex-col gap-2 my-4">
+                    <h2 class="text-center">Firmware</h2>
+                    <li>
+                        <a href="#download" class="flex card hover:bg-[--tabs-light-bg] hover:dark:bg-[--tabs-dark-bg] !p-4 transition-colors items-center bg-transparent">
+                            <img class="rounded-lg size-12" src="img/icon_rom.png" alt="rom">
+                            <span class="text-gray-600 dark:text-white">20240325_easy-navi.uf2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#download" class="flex card hover:bg-[--tabs-light-bg] hover:dark:bg-[--tabs-dark-bg] !p-4 transition-colors items-center bg-transparent">
+                            <img class="rounded-lg size-12" src="img/icon_rom.png" alt="rom">
+                            <span class="text-gray-600 dark:text-white">20230801_easy-navi.uf2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="flex flex-wrap items-center justify-between">
+
+            <!-- BACK TO TOP -->
+            <a href="#hero" class="font-pixel text-4xl text-easynavi-gradient" aria-label="easy-navi logo">easy-navi</a>
+
+            <!-- SOCIAL LINKS -->
+            <div class="flex gap-3">
+                <a href="https://github.com/" target="blank" aria-label="github"
+                    class="size-8 flex *:m-auto rounded-[--btn-border-radius] text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">
+                    <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+                <a href="https://twitter.com/" target="blank" aria-label="twitter"
+                    class="size-8 flex *:m-auto rounded-[--btn-border-radius] text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500">
+                    <svg class="size-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z" />
+                    </svg>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="flex items-center flex-col justify-between rounded-md bg-gray-100 px-6 py-3 dark:bg-gray-900">
+            <div class="flex justify-around w-full">
+                <span class="text-gray-600 dark:text-gray-400 mr-auto">&copy; 2024</span>
+                <span class="text-gray-600 dark:text-gray-400">Andrea Brun</span>
+            </div>
+        </div>
+        
+        <!-- CREDITS -->
+        <div class="flex justify-between w-full text-sm flex-wrap whitespace-nowrap gap-4">
+            <span>
+                <span data-lang="en">Theme:</span>
+                <span data-lang="it">Tema:</span>
+                <a class="underline" target="_blank" href="https://github.com/Tailus-UI/ada-html">Talius</a>
+            </span>
+            <span>
+                <span data-lang="en">Customizations:</span>
+                <span data-lang="it">Modifiche:</span>
+                <a class="underline" target="_blank" href="https://flowin.space">Diego Turtulici</a>
+            </span>
+        </div>
+
+    </footer>
+</body>
+
+</html>

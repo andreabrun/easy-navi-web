@@ -34,14 +34,6 @@ switchers.forEach((switcher) => {
   });
 });
 
-// LANGUAGE TOGGLER
-function langToggle() {
-  let isItalian = document.documentElement.getAttribute('lang').includes('it');
-  let newLang = isItalian ? 'en' : 'it'
-  document.documentElement.setAttribute('lang', newLang);
-  document.querySelector('#lang-toggle').className = newLang;
-}
-
 
 // NAVBAR ACTIVE ELEMENT
 document.addEventListener('DOMContentLoaded', () => {

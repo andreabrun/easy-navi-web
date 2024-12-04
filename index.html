@@ -31,6 +31,16 @@
 
     <!-- MAIN APP script -->
 
+    <script type="text/javascript">
+        // LANGUAGE TOGGLER
+        function langToggle() {
+        let isItalian = document.documentElement.getAttribute('lang').includes('it');
+        let newLang = isItalian ? 'en' : 'it'
+        document.documentElement.setAttribute('lang', newLang);
+        document.querySelector('#lang-toggle').className = newLang;
+        }
+    </script>
+
   <script type="module" crossorigin src="/easy-navi-web/assets/index-Dsxd6QZW.js"></script>
   <link rel="stylesheet" crossorigin href="/easy-navi-web/assets/index-CQrpHZ_P.css">
 </head>

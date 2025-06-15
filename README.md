@@ -2,8 +2,6 @@
 
 A Modern Landing page template built with Tailwindcss and Tailus Themer
 
-<img src="public/cover.png" />
-
 ## Features 
 
 * Modern
